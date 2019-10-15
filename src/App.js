@@ -48,20 +48,20 @@ class App extends Component {
     const chosenWizards = copyOfCharacters.filter(wizard => {
       return wizard[whichCauldron] === true;
     });
-    const shitHeads = chosenWizards.filter(deathEater => {
+    const baddies = chosenWizards.filter(deathEater => {
       return deathEater.deathEater === true;
     });
     this.setState({
-      spies: shitHeads
+      spies: baddies
     });
   };
 
   render() {
     return (
       <div className="App">
-        <h1>Let's Get These Motherfuckers</h1>
+        <h1>Let's Get These Jerks.</h1>
         <Find getCauldronFromComponent={this.getCauldronFromComponent} />
-        <Jerks shitHeads={this.state.spies} />
+        <Jerks baddies={this.state.spies} />
       </div>
     );
   }
